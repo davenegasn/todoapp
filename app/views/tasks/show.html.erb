@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="col-md-6 col-centered">
+		<h4>Users with "<%= @task.name %>" task completed:</h4>
+		<ol class="tasks-completed">
+		<% @task.statuses.each do |task| %>
+			<% if task.completed %>
+				<li>
+					<div class="row">
+						<div class="col-md-3">
+							<% if task.user.image_url %>
+							<img src="<%= task.user.image_url %>" alt="task.user.email">
+							<% end %>
+						</div>
+						<div class="col-md-9">
+							<h3><%= task.user.name %></h3>
+							<p><%= task.user.email %></p>
+							<p><span>Completed: </span><%= time_ago_in_words(task.created_at) %> ago</p>
+						</div>
+					</div>
+				</li>
+			<% end %>
+		<% end %>
+		</ol>
+		<%= link_to 'Edit', edit_task_path(@task) %> |
+		<%= link_to 'Back', tasks_path %>
+	</div>
+</div>
+
+
+

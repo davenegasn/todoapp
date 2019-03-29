@@ -1,0 +1,40 @@
+.col-centered{
+	float: none !important;
+	margin: 0 auto;
+}
+.navbar-nav li{
+	margin-right: 10px;
+}
+.task-ul{
+	list-style: none;
+	padding: 0;
+}
+.task-container{
+	margin-bottom: 10px;
+}
+.task-container h3{
+	text-align: center;
+	margin: 10px 0;
+}
+ol.tasks-completed{
+	
+	padding: 0;
+}
+ol.tasks-completed li{
+	border-bottom: 1px solid #dedede;
+	padding: 10px 0;
+}
+ol.tasks-completed li:last-child{
+	border-bottom:0;
+}
+ol.tasks-completed li img{
+	display: block;
+	max-height: 100px;
+}
+ol.tasks-completed li p{
+	margin-bottom: 5px;
+}
+ol.tasks-completed li p span{
+	font-size: .9em;
+	font-weight: bolder;
+}

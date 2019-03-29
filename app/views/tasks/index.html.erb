@@ -1,0 +1,25 @@
+<ul class="row task-ul">
+  <% @currentUser.statuses.each do |status| %>
+  <li class="col-md-4">
+    <div class="task-container card">
+      <img src="http://lorempixel.com/400/200" alt="task">
+      <h3><%= status.task.name %></h3>
+      <div class="row">
+        <div class="col-md-9">
+        <% if(status.completed) %>
+          <%= link_to "Mark as not completed", completed_status_path(status), remote: true, method: :patch, :class=>"btn btn-success btn-block"  %>
+        <% else %>
+          <%= link_to "Mark as complete", completed_status_path(status), remote: true, method: :patch, :class=>"btn btn-primary btn-block"  %>
+        <% end %>
+        </div>
+        <div class="col-md-3">
+           <%= link_to "View", task_path(status.task.id), :class => "btn btn-outline-info" %> 
+        </div>
+      </div>
+      
+    </div>
+  </li>
+   <% end %>
+</ul>
+
+<%= link_to 'New Task', new_task_path %>
